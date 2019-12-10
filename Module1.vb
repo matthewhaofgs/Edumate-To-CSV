@@ -12,13 +12,8 @@ Module Program
 
 		Console.WriteLine(jsonObject.Item("queries")(0)("file"))
 		ReadEdumateData(jsonObject)
-
-		Console.Read()
 	End Sub
 
-	Sub writeCSV()
-
-	End Sub
 
 	Sub ReadEdumateData(jsonObject As Newtonsoft.Json.Linq.JObject)
 
@@ -44,7 +39,6 @@ Module Program
 
 				sw.WriteLine(outRow.Substring(0, outRow.Length - 1))
 				Console.WriteLine((outRow.Substring(0, outRow.Length - 1)))
-				Console.Read()
 
 				While dr.Read()
 					outRow = ""
