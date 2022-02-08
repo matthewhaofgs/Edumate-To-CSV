@@ -44,12 +44,14 @@ Module Program
 					outRow = ""
 					If Not dr.IsDBNull(0) Then
 						For i As Integer = 0 To dr.FieldCount - 1
-							outRow = outRow & dr.GetValue(i) & ","
+							outRow = outRow & """" & dr.GetValue(i) & """" & ","
 						Next
 						sw.WriteLine(outRow.Substring(0, outRow.Length - 1))
 						Console.WriteLine((outRow.Substring(0, outRow.Length - 1)))
 					End If
+
 				End While
+				sw.Close()
 			Next
 
 		End Using
